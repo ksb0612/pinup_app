@@ -32,7 +32,7 @@ with st.sidebar:
 
 
 if menu == "📝 GBP 콘텐츠 생성기":
-    st.title("🍔 PinUp GBP 콘텐츠 생성기")
+    st.title("🍔 GBP 콘텐츠 생성기")
     st.markdown("한국어로 식당 정보를 입력하면 Google Business Profile(GBP)에 최적화된 영문 마케팅 콘텐츠 4종 세트(및 한글 번역)를 생성합니다.")
 
     st.header("📝 Restaurant Information")
@@ -86,27 +86,27 @@ You must return a JSON object with exactly the following 8 keys:
                     
                     with tab1:
                         st.subheader("🇺🇸 English")
-                        st.code(result.get("description_en", ""), language="markdown")
+                        st.info(result.get("description_en", ""))
                         st.subheader("🇰🇷 Korean")
-                        st.code(result.get("description_ko", ""), language="markdown")
+                        st.info(result.get("description_ko", ""))
                         
                     with tab2:
                         st.subheader("🇺🇸 English")
-                        st.code(result.get("menu_en", ""), language="markdown")
+                        st.info(result.get("menu_en", ""))
                         st.subheader("🇰🇷 Korean")
-                        st.code(result.get("menu_ko", ""), language="markdown")
+                        st.info(result.get("menu_ko", ""))
                         
                     with tab3:
                         st.subheader("🇺🇸 English")
-                        st.code(result.get("qa_en", ""), language="markdown")
+                        st.info(result.get("qa_en", ""))
                         st.subheader("🇰🇷 Korean")
-                        st.code(result.get("qa_ko", ""), language="markdown")
+                        st.info(result.get("qa_ko", ""))
                         
                     with tab4:
                         st.subheader("🇺🇸 English")
-                        st.code(result.get("posts_en", ""), language="markdown")
+                        st.info(result.get("posts_en", ""))
                         st.subheader("🇰🇷 Korean")
-                        st.code(result.get("posts_ko", ""), language="markdown")
+                        st.info(result.get("posts_ko", ""))
                 except Exception as e:
                     st.error(f"Failed to generate content: {e}")
                     try:
@@ -117,7 +117,7 @@ You must return a JSON object with exactly the following 8 keys:
                         st.error(f"Could not fetch model list: {list_e}")
 
 elif menu == "📊 GBP 진단 리포트":
-    st.title("📊 PinUp GBP 진단 리포트")
+    st.title("📊 GBP 진단 리포트")
     st.markdown("매장의 현재 상태와 타겟 고객층을 바탕으로 GBP 최적화 진단 및 개선 리포트를 제공합니다.")
 
     import datetime
